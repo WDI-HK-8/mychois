@@ -1,0 +1,9 @@
+var app = angular.module('mychois', ['ngRoute']);
+
+app.config(['$routeProvider', function($routeProvider){
+  $routeProvider.
+    when('/', {
+      templateUrl: "<%= asset_path('static_pages/index.html') %>", 
+      controller: 'StaticPagesCtrl'
+    })
+}]);

@@ -19,6 +19,8 @@ gem 'pg'
 gem 'better_errors'
 gem 'binding_of_caller'
 
+gem 'bower'
+gem 'devise_token_auth'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
