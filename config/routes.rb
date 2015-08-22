@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   resources 'districts'
 
+  resources 'user_types'
+
 end
