@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150822080143) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "district_id"
-
+    t.integer  "user_type_id"
   end
 
   add_index "users", ["district_id"], name: "index_users_on_district_id", using: :btree
@@ -60,6 +60,4 @@ ActiveRecord::Schema.define(version: 20150822080143) do
 
   add_foreign_key "users", "districts"
   add_foreign_key "users", "user_types"
-
-  add_foreign_key "users", "districts"
 end
