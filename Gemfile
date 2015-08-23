@@ -22,6 +22,9 @@ gem 'binding_of_caller'
 gem 'bower'
 gem 'devise_token_auth'
 gem 'omniauth'
+
+
+gem 'rails_12factor', group: :production
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
