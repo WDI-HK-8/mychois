@@ -19,6 +19,8 @@ gem 'bower'
 gem 'devise_token_auth'
 
 gem 'rails_12factor', group: :production
+gem 'omniauth'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
