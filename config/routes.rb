@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   get 'api/v1/users/show_me' => 'users#show_me'
   get 'api/v1/districts' => 'districts#index'
   get 'api/v1/user_types' => 'user_types#index'
-
+  resources 'groceries', :path => 'api/v1/groceries'
 
 end
