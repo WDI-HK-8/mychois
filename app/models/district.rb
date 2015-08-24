@@ -1,5 +1,5 @@
-class District < ActiveRecord::Base
+class District < ActiveYaml::Base
+  include ActiveHash::Associations
+  
   has_many :users
-
-  validates :name, presence: true, uniqueness: true 
 end
