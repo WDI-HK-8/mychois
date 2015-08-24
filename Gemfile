@@ -15,10 +15,6 @@ gem 'bootstrap-sass', '~> 3.3.0'
 # Use postgresql as the database
 gem 'pg'
 
-# Debugging tools
-gem 'better_errors'
-gem 'binding_of_caller'
-
 gem 'bower'
 gem 'devise_token_auth'
 
@@ -47,6 +43,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # Debugging tools
+  gem 'better_errors'
+  gem 'binding_of_caller'
+
+  gem 'pry-rails'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
