@@ -1,3 +1,13 @@
 app.controller('StaticPagesCtrl', ['$scope', function($scope){
-  $scope.message = "Hello World!";
+  $scope.message = "Landing Page";
+
+  $scope.logout = function(){
+    $auth.signOut().
+    then(function(response){
+      console.log(response);
+    }).
+    catch(function(response){
+      console.log(response);
+    })
+  }
 }]);

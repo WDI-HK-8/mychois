@@ -1,0 +1,15 @@
+app.controller('LoginCtrl', ['$scope', '$http', '$auth', function($scope, $http, $auth){
+  $scope.message = "Login";
+
+  $scope.loginForm = {};
+
+  $scope.login = function() {
+    $auth.submitLogin($scope.loginForm).
+    then(function(response){
+      console.log(response);
+    }).
+    catch(function(response){
+      console.log(response);
+    });
+  }
+}]);
