@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
   resources 'districts', :path => 'api/v1/districts'
+<<<<<<< Updated upstream
   resources 'districts', :path => 'api/v1/user_types'
+=======
+  resources 'user_types', :path => 'api/v1/user_types'
+
+>>>>>>> Stashed changes
 end
