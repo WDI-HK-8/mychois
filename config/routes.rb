@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'Worker', at: 'api/v1/workers'
+  mount_devise_token_auth_for 'User', at: 'api/v1/auth'
   mount_devise_token_auth_for 'Customer', at: 'api/v1/customers'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
