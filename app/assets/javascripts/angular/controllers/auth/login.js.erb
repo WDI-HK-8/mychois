@@ -9,6 +9,7 @@ app.controller('LoginCtrl', ['$scope', '$http', '$auth', '$location','UserServic
       console.log(response);
       UserServices.user = response;
       $location.path('/');
+      $scope.loggedIn = true;
     }).
     catch(function(response){
       console.log(response);
