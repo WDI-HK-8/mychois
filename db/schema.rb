@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150824065244) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "district_id"
-    t.integer  "user_type_id"
+    t.string   "type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
