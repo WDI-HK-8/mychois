@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
     def no_record_found
       no_record = Hash.new
-      no_record[:message] = "Record Not Found"
+      no_record[:error] = "Record Not Found"
       render json: no_record
     end
 end
