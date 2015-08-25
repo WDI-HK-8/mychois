@@ -31,7 +31,7 @@ class DeviseTokenAuthCreateUsers < ActiveRecord::Migration
       t.string  :name
       t.string  :address
       t.integer :phone_number
-      t.integer :offence
+      t.integer :offence, :default => 0
       t.string  :email
 
       ## Tokens
