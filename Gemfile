@@ -18,7 +18,11 @@ gem 'pg'
 gem 'bower'
 gem 'devise_token_auth'
 
+gem 'active_hash'
+
 gem 'rails_12factor', group: :production
+gem 'omniauth'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

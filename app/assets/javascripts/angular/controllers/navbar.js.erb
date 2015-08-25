@@ -1,0 +1,20 @@
+app.controller('NavbarCtrl', ['$scope', '$auth', '$location', 'UserServices', function($scope, $auth, $location, UserServices){
+  $scope.navMessage = "Navbar Everywhere";
+
+  $scope.serviceMessage = UserServices.serviceMessage;
+
+  $scope.user = UserServices.user;
+  // h2 welcome {{ user.email }} /h2
+
+  $scope.logout = function() {
+    $auth.signOut().then(function(response){
+      console.log(response);
+      UserServices.user = null;
+      $scope.user = null;
+      $location.path('/');
+    }).catch(function(response){
+      console.log(response);
+    })
+  }
+
+}]);

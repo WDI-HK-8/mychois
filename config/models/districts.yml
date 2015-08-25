@@ -1,0 +1,47 @@
+central:
+      id: 1,
+      name: Central
+wanchai:
+      id: 2,
+      name: Wan Chai
+shamshuipo:
+      id: 3,
+      name: Sham Shui Po
+kowlooncity:
+      id: 4,
+      name: Kowloon City
+kwuntong:
+      id: 5,
+      name: Kwun Tong
+wongtaisin:
+      id: 6,
+      name: Wong Tai Sin
+yautsimmong:
+      id: 7,
+      name: Yau Tsim Mong
+kwaitsing:
+      id: 8,
+      name: Kwai Tsing
+northpoint:
+      id: 9,
+      name: North Point
+saikung:
+      id: 10,
+      name: Sai Kung
+shatin:
+      id: 11,
+      name: Sha Tin
+taipo:
+      id: 12,
+      name: Tai Po
+tsuenwan:
+      id: 13,
+      name: Tsuen Wan
+tuenmun:
+      id: 14,
+      name: Tuen Mun
+yuenlong:
+      id: 15,
+      name: Yuen Long
+
+            

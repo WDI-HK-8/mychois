@@ -1,0 +1,9 @@
+worker:
+  id: 1,
+  name: Worker
+customer:
+  id: 2,
+  name: Customer
+admin:
+  id: 3,
+  name: Admin

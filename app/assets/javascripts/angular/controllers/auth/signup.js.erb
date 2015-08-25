@@ -1,0 +1,24 @@
+app.controller('SignUpCtrl', ['$scope', '$http', '$auth', '$location', 'UserServices', function($scope, $http, $auth, $location, UserServices){
+  $scope.message = "Signup";
+
+  $http.get('/api/v1/districts').
+  then(function(response){
+    $scope.districts = response.data;
+    console.log($scope.districts);
+  });
+
+  $scope.registrationForm = {};
+
+  $scope.signup = function() {
+    console.log($scope.registrationForm);
+    $auth.submitRegistration($scope.registrationForm).
+    then(function(response){
+      console.log(response);
+      UserServices.user = response.data.data;
+      $location.path('/');
+    }).
+    catch(function(response){
+      console.log(response);
+    });
+  }
+}]);
