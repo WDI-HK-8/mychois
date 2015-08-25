@@ -1,0 +1,25 @@
+app.controller('SignUpCtrl', ['$scope', '$http', '$auth', '$location', function($scope, $http, $auth, $location){
+  $scope.message = "Signup";
+
+  // $scope.selectedDistricts = null;
+
+  $http.get('/api/v1/districts').
+  then(function(response){
+    $scope.districts = response.data;
+    console.log($scope.districts);
+  });
+
+  $scope.registrationForm = {};
+
+  $scope.signup = function() {
+    console.log($scope.registrationForm);
+    // $auth.submitRegistration($scope.registrationForm).
+    // then(function(response){
+    //   console.log(response);
+    //   $location.path('/');
+    // }).
+    // catch(function(response){
+    //   console.log(response);
+    // });
+  }
+}]);
