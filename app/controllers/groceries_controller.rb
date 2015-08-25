@@ -27,7 +27,7 @@ class GroceriesController < ApplicationController
 
   private
     def groceries_params
-      params.require(:grocery).permit(:name, :price)
+      params.require(:grocery).permit(:name, :price, :sale_price)
     end
     def no_record_found
       no_record = Hash.new
