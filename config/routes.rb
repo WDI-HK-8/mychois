@@ -8,11 +8,7 @@ Rails.application.routes.draw do
   put 'api/v1/users/:id/change_user_types' => 'users#change_user_types'
   patch 'api/v1/users/:id/change_user_types' => 'users#change_user_types'
   get 'api/v1/users/user_types/:id' => 'users#search_user_types'
-  resources 'districts', :path => 'api/v1/districts'
-<<<<<<< Updated upstream
-  resources 'districts', :path => 'api/v1/user_types'
-=======
-  resources 'user_types', :path => 'api/v1/user_types'
+  get 'api/v1/districts' => 'districts#index'
+  get 'api/v1/user_types' => 'user_types#index'
 
->>>>>>> Stashed changes
 end

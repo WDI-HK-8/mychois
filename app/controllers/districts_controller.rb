@@ -2,8 +2,6 @@ class DistrictsController < ApplicationController
   def index
     @districts = District.all 
   end
-<<<<<<< Updated upstream
-=======
 
   def create
     @district = District.new(district_params)
@@ -13,5 +11,5 @@ class DistrictsController < ApplicationController
   def district_params
     params.require(:district).permit(:name)
   end
->>>>>>> Stashed changes
+
 end

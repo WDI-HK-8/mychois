@@ -4,10 +4,11 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
   $routeProvider.
     when('/', {
       templateUrl: "<%= asset_path('static_pages/index.html') %>", 
-      controller: 'StaticPagesCtrl'
+      controller: 'StaticPagesCtrl',
+      // css: 'static_pages/static_pages.css.erb'
     }).
     when('/signup', {
-      templateUrl: "<%= asset_path('auth/signup.html') %>", 
+      templateUrl: "<%= asset_path('auth/signup.html.erb') %>", 
       controller: 'SignUpCtrl'
     }).
     when('/login', {
@@ -19,4 +20,6 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
     apiUrl: 'http://localhost:3000/api/v1'
   })    
 }]);
+
+
 
