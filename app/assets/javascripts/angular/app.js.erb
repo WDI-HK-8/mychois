@@ -4,8 +4,7 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
   $routeProvider.
     when('/', {
       templateUrl: "<%= asset_path('static_pages/index.html') %>", 
-      controller: 'StaticPagesCtrl',
-      // css: 'static_pages/static_pages.css.erb'
+      controller: 'StaticPagesCtrl'
     }).
     when('/signup', {
       templateUrl: "<%= asset_path('auth/signup.html.erb') %>", 
