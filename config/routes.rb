@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   get 'api/v1/districts' => 'districts#index'
   get 'api/v1/user_types' => 'user_types#index'
   resources 'groceries', :path => 'api/v1/groceries'
+  resources 'grocery_lists', :path => 'api/v1/grocery_lists'
 
 end
