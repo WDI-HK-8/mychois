@@ -1,5 +1,5 @@
 class GroceryListsController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
   def create
     @grocery_list = GroceryList.new(grocery_list_params)
     @grocery_list[:customer_id] = current_user.id
@@ -8,8 +8,10 @@ class GroceryListsController < ApplicationController
   end
 
   def index
+    render :status => :unauthorized unless current_user.type == "Admin"
     @grocery_lists = GroceryList.all
-  end
+    render json: {user: current_user.type}
+  end 
 
   def grocery_list_params
     params.require(:grocery_list).permit(:additional_comments, :substitutions, :name)
