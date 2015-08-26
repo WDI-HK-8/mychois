@@ -1,23 +1,13 @@
 class UsersController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :no_record_found
 
-  def show_me
-    render json: current_user
-  end
-
   def change_user_types
     user = user_type_params
     user_id = params[:id]
     @user = User.update(user_id, user_type_id: user[:user_type_id])
   end
 
-  def search_user_types
-    user_types = params[:id]
-    @users = User.where(user_type_id: user_types)
-  end
-
   private
-
     def user_type_params
       params.require(:user).permit(:user_type_id)
     end

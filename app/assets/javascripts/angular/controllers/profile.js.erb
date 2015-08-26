@@ -1,11 +1,8 @@
 app.controller('ProfileCtrl', ['$scope', '$auth', '$http', '$location', function($scope, $auth, $http, $location){
   
-  console.log('You\'re on the profile page');
-  if ($scope.authStatus == 2){
+  if ($scope.user == null){
     $location.path('/');
   };
-  console.log($scope.user)
-
 
   $http.get('/api/v1/districts').
   then(function(response){
@@ -30,5 +27,3 @@ app.controller('ProfileCtrl', ['$scope', '$auth', '$http', '$location', function
   };
 
 }])
-
-

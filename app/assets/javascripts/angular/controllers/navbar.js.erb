@@ -14,7 +14,6 @@ app.controller('NavbarCtrl', ['$scope', '$auth', '$location',  function($scope, 
   $scope.logout = function() {
     $auth.signOut().then(function(response){
       console.log(response);
-      
       $scope.user = null;
       $scope.loggedIn = false;
       $location.path('/');
@@ -22,6 +21,4 @@ app.controller('NavbarCtrl', ['$scope', '$auth', '$location',  function($scope, 
       console.log(response);
     })
   }
-
 }]);
-
