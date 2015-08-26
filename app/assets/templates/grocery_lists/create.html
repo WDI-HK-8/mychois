@@ -1,0 +1,23 @@
+<navbar></navbar>
+<div class="container">
+  <div class="row">
+    <div class="row">
+      <div class="col-xs-11">
+        <h1>Create a Grocery List</h1>
+        <form ng-submit="createList.create()">
+          <div class="form-group">
+            <label>Additional Comments</label>
+            <textarea name="name" ng-model="createList.grocery_list.additional_comments" required="required" class="form-control" placeholder="Please indicate any special dietary concerns to for our workers!"></textarea>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="createList.grocery_list.substitutions" type="checkbox"> Substitutions
+            </label>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>
+          <a href="/#/" class="btn btn-danger">Back</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
