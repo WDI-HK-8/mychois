@@ -11,11 +11,13 @@ class GroceryListsController < ApplicationController
     @grocery_list = GroceryList.find_by_id(params[:id])
 
     if @grocery_list.nil?
-      render #message can't find it
-
+      render json: { message: "Cannot find the grocery list" }, status: :not_found
     else
-      @grocery_list.update(grocery_list_params)
-
+      if @grocery_list.customer_id == current_user.id
+        @grocery_list.update(grocery_list_params)
+      else  
+        render json: { message: "Cannot update list" }, :status => :bad_request 
+      end
     end
   end
 
