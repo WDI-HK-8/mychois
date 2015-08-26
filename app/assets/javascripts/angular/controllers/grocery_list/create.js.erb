@@ -6,12 +6,10 @@ app.controller('GroceryListCreateCtrl', ['$scope', '$http', '$auth', '$location'
     $http.post('/api/v1/grocery_lists', $scope.createList).
     then(function(response){
       console.log(response);
-      
-      // $location.path('/');
     }).
     catch(function(response){
       console.log(response);
     });
   }
-
+  
 }]);
