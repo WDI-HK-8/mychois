@@ -1,10 +1,22 @@
 app.controller('ProfileCtrl', ['$scope', '$auth', '$http', '$location', function($scope, $auth, $http, $location){
-
-  if ($scope.loggedIn = false){
+  
+  console.log('You\'re on the profile page');
+  if ($scope.authStatus == 2){
     $location.path('/');
-  }
+  };
+  console.log($scope.user)
+
+
+  $http.get('/api/v1/districts').
+  then(function(response){
+    $scope.districts = response.data;
+    console.log($scope.districts);
+    $scope.user_district = $scope.districts[$scope.user.district_id-1].name
+  });
 
   $scope.$on('auth:account-update-success', function(ev) {
+    console.log($scope.updateAccountForm);
+    $scope.user_district = $scope.districts[$scope.user.district_id-1].name;
     console.log('updated');
   })
   $scope.handleUpdateAccountBtnClick = function() {
