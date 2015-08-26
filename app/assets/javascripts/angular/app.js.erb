@@ -22,7 +22,7 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
       templateUrl: "<%= asset_path('grocery_lists/create.html') %>",
       controller: 'GroceryListCreateCtrl'
     }).
-    when('/grocery_lists/show', {
+    when('/grocery_lists/', {
       templateUrl: "<%= asset_path('grocery_lists/index.html') %>",
       controller: "GroceryListAllCtrl"
     });
