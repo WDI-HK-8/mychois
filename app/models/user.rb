@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   validates :district_id, presence: true
 
+  has_many :grocery_lists
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :district
 end
