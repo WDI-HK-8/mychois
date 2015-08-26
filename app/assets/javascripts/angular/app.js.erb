@@ -15,7 +15,8 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
       controller: 'LoginCtrl'
     }).
     when('/profile', {
-      templateUrl: "<%= asset_path('auth/profile.html') %>"
+      templateUrl: "<%= asset_path('auth/profile.html') %>",
+      controller: 'ProfileCtrl'
     })
 
   $authProvider.configure({

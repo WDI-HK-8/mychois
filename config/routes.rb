@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   root 'static_pages#index'
   put 'api/v1/users/:id/change_user_types' => 'users#change_user_types'
   patch 'api/v1/users/:id/change_user_types' => 'users#change_user_types'
-  get 'api/v1/users/user_types/:id' => 'users#search_user_types'
   get 'api/v1/districts' => 'districts#index'
   get 'api/v1/user_types' => 'user_types#index'
-
 end

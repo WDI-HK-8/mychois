@@ -1,20 +1,24 @@
-app.controller('NavbarCtrl', ['$scope', '$auth', '$location', 'UserServices', function($scope, $auth, $location, UserServices){
-  $scope.navMessage = "Navbar Everywhere";
+app.controller('NavbarCtrl', ['$scope', '$auth', '$location',  function($scope, $auth, $location){
 
-  $scope.serviceMessage = UserServices.serviceMessage;
-
-  $scope.user = UserServices.user;
-  // h2 welcome {{ user.email }} /h2
+  // check if logged in
+  $scope.authResponse = []
+  $scope.authResponse.push($auth.validateUser())
+  $scope.authStatus = $scope.authResponse[0].$$state.status
+ 
+  if ($scope.authStatus == 2) {
+    $scope.loggedIn = false;  
+  } else {
+    $scope.loggedIn = true;
+  }
 
   $scope.logout = function() {
     $auth.signOut().then(function(response){
       console.log(response);
-      UserServices.user = null;
       $scope.user = null;
+      $scope.loggedIn = false;
       $location.path('/');
     }).catch(function(response){
       console.log(response);
     })
   }
-
 }]);

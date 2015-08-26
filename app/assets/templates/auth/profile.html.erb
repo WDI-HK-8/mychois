@@ -1,16 +1,45 @@
 <navbar></navbar>
-
-<div class="container">
+ <div class="container">
   <div class="row">
     <h1>Edit Profile</h1>
     <ul>
       <li>Name: {{ user.name }}</li>
       <li>Email: {{ user.email }}</li>
-      <li>Password: ********</li>
       <li>Phone Number: {{ user.phone_number }}</li>
       <li>Address: {{ user.address }}</li>
-      <li>District: {{ user.district_name }} {{ user.district.name }}</li>
+      <li>District: {{ user_district }}</li>
     </ul>
+    <button type="button" class="btn btn-primary" ng-click="showEditFields=true">Edit</button>
+  </div>
+  <div class="row">
+    <form ng-show="showEditFields" ng-submit="updateAccount(updateAccountForm)" role="form" ng-init="updateAccountForm = {}">
+      <fieldset ng-disabled="!loggedIn">
+          <div class="form-group">
+            <label>Name:</label>
+            <input type="text" name="text" placeholder= {{user.name}} ng-model="updateAccountForm.name">
+          </div>
+          <div class="form-group">
+            <label>Email:</label> 
+            <input type="email" name="text" placeholder= {{user.email}} ng-model="updateAccountForm.email">
+          </div>
+          <div class="form-group">
+            <label>Phone Number:</label> 
+            <input type="number" placeholder= {{user.phone_number}} ng-model="updateAccountForm.phone_number">
+          </div>
+          <div class="form-group">
+            <label>Address:</label> <input type="text" name="text" placeholder= {{user.address}} ng-model="updateAccountForm.address">
+          </div>
 
+          <div class="form-group">
+            <label>District: </label> 
+            <select ng-model="updateAccountForm.district_id">
+              <option value="">{{ user_district }}</option>
+              <option ng-repeat="district in districts" value="{{ district.id }}" >{{district.name}}</option>
+            </select> 
+          </div>
+
+        <button type="submit">Update your profile</button>
+      </fieldset>
+    </form>
   </div>
 </div>
