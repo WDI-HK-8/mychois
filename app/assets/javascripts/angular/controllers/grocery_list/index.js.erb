@@ -1,0 +1,10 @@
+app.controller('GroceryListAllCtrl', ['$scope', '$http', '$auth', '$location', function($scope, $http, $auth, $location){
+
+  $http.get('/api/v1/grocery_lists').then(function(response) {
+    $scope.grocery_lists = response.data;
+    console.log(response.data)
+  }).
+  catch(function(response){
+    console.log(response);
+  });
+}]);

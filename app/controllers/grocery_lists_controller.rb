@@ -20,6 +20,10 @@ class GroceryListsController < ApplicationController
     end
   end
 
+  def index
+    @grocery_lists = GroceryList.where(:customer_id => current_user.id)
+  end 
+
   def grocery_list_params
     params.require(:grocery_list).permit(:additional_comments, :substitutions, :name)
   end
