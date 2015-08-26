@@ -26,6 +26,10 @@ app.controller('GroceryListEditCtrl', ['$scope', '$http', '$auth', '$location','
     console.log("not found", response);
   });
 
-
-
+  $scope.delete = function(){
+    $http.delete('/api/v1/grocery_lists/' + $routeParams.id).then(
+      function(){
+        $location.path('/grocery_lists/');
+      });
+  }
 }]);

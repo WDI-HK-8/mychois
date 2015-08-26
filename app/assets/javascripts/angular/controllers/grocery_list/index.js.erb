@@ -16,4 +16,7 @@ app.controller('GroceryListAllCtrl', ['$scope', '$http', '$auth', '$location', f
        console.log(response)
      });
    }
+   $scope.showOneList = function(groceryList){
+      $location.path('/grocery_lists/edit/' + groceryList.id);
+   }
 }]);
