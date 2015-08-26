@@ -1,21 +1,21 @@
 app.controller('GroceryListAllCtrl', ['$scope', '$http', '$auth', '$location', function($scope, $http, $auth, $location){
-
-  var getList = function() {
-    $http.get('/api/v1/grocery_lists').then(function(response) {
+    var url = "<%= ENV['URL'] %>" || "http://localhost:3000"
+    $http.get(url + '/api/v1/grocery_lists').then(function(response) {
       $scope.grocery_lists = response.data;
       console.log(response.data)
     }).
     catch(function(response){
       console.log(response);
     });
-  }()
+
   $scope.delete = function(groceryList){
-     $http.delete('http://localhost:3000/api/v1/grocery_lists/' + groceryList.id).success(function(response){
+     $http.delete(url + '/api/v1/grocery_lists/' + groceryList.id).success(function(response){
       groceryList.hide = true
      }).error(function(response){
        console.log(response)
      });
    }
+
    $scope.showOneList = function(groceryList){
       $location.path('/grocery_lists/edit/' + groceryList.id);
    }

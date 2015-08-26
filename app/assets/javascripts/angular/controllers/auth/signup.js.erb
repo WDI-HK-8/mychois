@@ -1,7 +1,8 @@
 app.controller('SignUpCtrl', ['$scope', '$http', '$auth', '$location', function($scope, $http, $auth, $location){
+  var url = "<%= ENV['URL'] %>" || "http://localhost:3000"
   $scope.message = "Signup";
 
-  $http.get('/api/v1/districts').
+  $http.get(url + '/api/v1/districts').
   then(function(response){
     $scope.districts = response.data;
     console.log($scope.districts);

@@ -1,12 +1,13 @@
 app.controller('GroceryListEditCtrl', ['$scope', '$http', '$auth', '$location','$routeParams', function($scope, $http, $auth, $location, $routeParams){
+  var url = "<%= ENV['URL'] %>" || "http://localhost:3000"
   $scope.updateList = {}
   $scope.updateList.list_id
   $scope.getList
 
   $scope.updateList.update = function() {
-      $http.patch('/api/v1/grocery_lists/' + $routeParams.id, $scope.updateList).
+    $http.patch(url + '/api/v1/grocery_lists/' + $routeParams.id, $scope.updateList).
     then(function(response){
-      $scope.grocery_lists = response;  
+      $scope.grocery_list = response.data;  
       console.log(response);
     }).
     catch(function(response){
@@ -14,7 +15,7 @@ app.controller('GroceryListEditCtrl', ['$scope', '$http', '$auth', '$location','
     });
   }
 
-  $http.get('/api/v1/grocery_lists/' + $routeParams.id).
+  $http.get(url + '/api/v1/grocery_lists/' + $routeParams.id).
   then(function(response){
     $scope.grocery_list = response.data;
     if ($scope.grocery_list.substitutions == null){
