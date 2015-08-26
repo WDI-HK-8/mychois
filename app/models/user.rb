@@ -7,7 +7,6 @@ class User < ActiveRecord::Base
   validates :district_id, presence: true
 
   has_many :grocery_lists
-  has_many :groceries, through: :grocery_lists
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :district
 end
