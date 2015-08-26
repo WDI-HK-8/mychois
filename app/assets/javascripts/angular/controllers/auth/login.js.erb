@@ -1,8 +1,7 @@
 app.controller('LoginCtrl', ['$scope', '$http', '$auth', '$location', function($scope, $http, $auth, $location){
   $scope.message = "Login";
-
   $scope.loginForm = {};
-
+  
   $scope.login = function() {
     $auth.submitLogin($scope.loginForm).
     then(function(response){
@@ -15,4 +14,5 @@ app.controller('LoginCtrl', ['$scope', '$http', '$auth', '$location', function($
       console.log(response);
     });
   }
+
 }]);
