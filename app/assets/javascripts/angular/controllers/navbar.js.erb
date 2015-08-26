@@ -1,4 +1,4 @@
-app.controller('NavbarCtrl', ['$scope', '$auth', '$location', 'UserServices', function($scope, $auth, $location, UserServices){
+app.controller('NavbarCtrl', ['$scope', '$auth', '$location',  function($scope, $auth, $location){
 
   // check if logged in
   $scope.authResponse = []
@@ -7,16 +7,14 @@ app.controller('NavbarCtrl', ['$scope', '$auth', '$location', 'UserServices', fu
  
   if ($scope.authStatus == 2) {
     $scope.loggedIn = false;  
-    console.log($scope.loggedIn);
   } else {
     $scope.loggedIn = true;
-    console.log($scope.loggedIn);
   }
 
   $scope.logout = function() {
     $auth.signOut().then(function(response){
       console.log(response);
-      UserServices.user = null;
+      
       $scope.user = null;
       $scope.loggedIn = false;
       $location.path('/');

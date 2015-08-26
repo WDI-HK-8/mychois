@@ -1,17 +1,21 @@
-app.controller('ProfileCtrl', ['$scope', '$auth', '$http', function($scope, $auth, $http){
+app.controller('ProfileCtrl', ['$scope', '$auth', '$http', '$location', function($scope, $auth, $http, $location){
 
-    $scope.$on('auth:account-update-success', function(ev) {
-      console.log('updated');
-    })
-    $scope.handleUpdateAccountBtnClick = function() {
-      $auth.updateAccount($scope.updateAccountForm)
-        .then(function(response) {
-          console.log(response);
-        })
-        .catch(function(response) {
-          console.log(response);
-        });
-    };
+  if ($scope.loggedIn = false){
+    $location.path('/');
+  }
+
+  $scope.$on('auth:account-update-success', function(ev) {
+    console.log('updated');
+  })
+  $scope.handleUpdateAccountBtnClick = function() {
+    $auth.updateAccount($scope.updateAccountForm)
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(response) {
+        console.log(response);
+      });
+  };
 
 }])
 
