@@ -22,9 +22,23 @@ class GroceryListsController < ApplicationController
 
   def index
     @grocery_lists = GroceryList.where(:customer_id => current_user.id)
-  end 
+  end  
 
-  def grocery_list_params
-    params.require(:grocery_list).permit(:additional_comments, :substitutions, :name)
+  def destroy
+    @grocery_list = GroceryList.find_by_id(params[:id])
+    if @grocery_list.nil? 
+      render json: {error: "No record found"}, :status => :bad_request
+    else
+      if current_user.id == @grocery_list.customer_id
+        @grocery_list.destroy
+      else
+        render json: {error: "Unauthorized"}, :status => :unauthorized
+      end
+    end
   end
+  private
+    def grocery_list_params
+      params.require(:grocery_list).permit(:additional_comments, :substitutions, :name)
+    end
+
 end
