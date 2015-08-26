@@ -20,6 +20,15 @@ class GroceryListsController < ApplicationController
     end
   end
 
+  def show
+    @grocery_list = GroceryList.find_by_id(params[:id])
+
+    if @grocery_list.nil?
+      render json: { message: "Cannot find the specific grocery list" }, status: :not_found
+    end
+  end
+
+
   def index
     @grocery_lists = GroceryList.where(:customer_id => current_user.id)
   end  
