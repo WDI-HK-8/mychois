@@ -1,4 +1,3 @@
 class GroceryListItem < ActiveRecord::Base
-  has_many :grocery_lists
-  has_many :users, through: :groceries
+  belongs_to :grocery_list
 end
