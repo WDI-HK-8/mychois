@@ -4,9 +4,9 @@
     <div class="row">
       <div class="col-xs-11">
         <h1>Your Grocery List</h1>
-        <ul>
-          <li ng-repeat="grocery_list in grocery_lists track by $index">
-            <a href='#'>{{grocery_list.name}}</a>
+        <ul deleteGroceryList>
+          <li ng-repeat="groceryList in grocery_lists track by $index" ng-hide="groceryList.hide" ng-init="groceryList.hide=false">
+            <a>{{groceryList.name}}   <button class="btn btn-danger" ng-click="delete(groceryList)">Delete</button></a>
           </li>
         </ul>
       </div>
