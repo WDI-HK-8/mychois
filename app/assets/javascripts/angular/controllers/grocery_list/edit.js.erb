@@ -1,0 +1,31 @@
+app.controller('GroceryListEditCtrl', ['$scope', '$http', '$auth', '$location','$routeParams', function($scope, $http, $auth, $location, $routeParams){
+  $scope.updateList = {}
+  $scope.updateList.list_id
+  $scope.getList
+
+  $scope.updateList.update = function() {
+      $http.patch('/api/v1/grocery_lists/' + $routeParams.id, $scope.updateList).
+    then(function(response){
+      $scope.grocery_lists = response;  
+      console.log(response);
+    }).
+    catch(function(response){
+      console.log(response);
+    });
+  }
+
+  $http.get('/api/v1/grocery_lists/' + $routeParams.id).
+  then(function(response){
+    $scope.grocery_list = response.data;
+    if ($scope.grocery_list.substitutions == null){
+      $scope.grocery_list.substitutions = false;
+    }
+    console.log(response);
+  }).
+  catch(function(response){
+    console.log("not found", response);
+  });
+
+
+
+}]);

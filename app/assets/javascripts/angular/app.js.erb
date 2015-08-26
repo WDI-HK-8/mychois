@@ -22,13 +22,13 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
       templateUrl: "<%= asset_path('grocery_lists/create.html') %>",
       controller: 'GroceryListCreateCtrl'
     }).
-    when('/grocery_lists/update', {
-      templateUrl: "<%= asset_path('grocery_lists/update.html') %>",
-      controller: 'GroceryListUpdateCtrl'
-    }).
     when('/grocery_lists/', {
       templateUrl: "<%= asset_path('grocery_lists/index.html') %>",
       controller: "GroceryListAllCtrl"
+    }).
+    when('/grocery_lists/edit/:id', {
+      templateUrl: "<%= asset_path('grocery_lists/edit.html') %>",
+      controller: 'GroceryListEditCtrl'
     });
 
   $authProvider.configure({
