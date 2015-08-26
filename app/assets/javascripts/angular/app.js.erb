@@ -21,6 +21,10 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
     when('/grocery_lists/create', {
       templateUrl: "<%= asset_path('grocery_lists/create.html') %>",
       controller: 'GroceryListCreateCtrl'
+    }).
+    when('/grocery_lists/update', {
+      templateUrl: "<%= asset_path('grocery_lists/update.html') %>",
+      controller: 'GroceryListUpdateCtrl'
     });
 
   $authProvider.configure({

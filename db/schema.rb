@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20150826063418) do
     t.datetime "updated_at"
     t.integer  "district_id"
     t.string   "type"
+
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
