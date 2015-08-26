@@ -8,6 +8,6 @@ class GroceryListsController < ApplicationController
   end
 
   def grocery_list_params
-    params.require(:grocery_list).permit(:additional_comments, :substitutions)
+    params.require(:grocery_list).permit(:additional_comments, :substitutions, :name)
   end
 end
