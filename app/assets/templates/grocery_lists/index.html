@@ -4,6 +4,11 @@
     <div class="row">
       <div class="col-xs-11">
         <h1>Your Grocery List</h1>
+        <ul>
+          <li ng-repeat="grocery_list in grocery_lists track by $index">
+            <a href='#'>{{grocery_list.name}}</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

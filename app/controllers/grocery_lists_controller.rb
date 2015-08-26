@@ -8,9 +8,7 @@ class GroceryListsController < ApplicationController
   end
 
   def index
-    render :status => :unauthorized unless current_user.type == "Admin"
-    @grocery_lists = GroceryList.all
-    render json: {user: current_user.type}
+    @grocery_lists = GroceryList.where(:customer_id => current_user.id)
   end 
 
   def grocery_list_params
