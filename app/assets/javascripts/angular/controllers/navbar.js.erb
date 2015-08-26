@@ -1,6 +1,6 @@
 app.controller('NavbarCtrl', ['$scope', '$auth', '$location', 'UserServices', function($scope, $auth, $location, UserServices){
 
-  //check if logged in
+  // check if logged in
   $scope.authResponse = []
   $scope.authResponse.push($auth.validateUser())
   $scope.authStatus = $scope.authResponse[0].$$state.status
@@ -11,7 +11,6 @@ app.controller('NavbarCtrl', ['$scope', '$auth', '$location', 'UserServices', fu
   } else {
     $scope.loggedIn = true;
     console.log($scope.loggedIn);
-    // console.log($scope.authStatus)
   }
 
   $scope.logout = function() {
