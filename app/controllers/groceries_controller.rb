@@ -1,5 +1,4 @@
 class GroceriesController < ApplicationController
-  rescue_from ActiveRecord::RecordNotFound, with: :no_record_found
   def index
     @groceries = Grocery.all
   end
@@ -12,17 +11,27 @@ class GroceriesController < ApplicationController
   def show
     grocery_id = params[:id]
     @grocery = Grocery.find_by_id(grocery_id)
+    no_record_found if @grocery.nil?
   end
 
   def update
     grocery_id = params[:id]
     grocery = groceries_params
-    @grocery = Grocery.update(grocery_id, grocery)
+    begin
+      @grocery = Grocery.update(grocery_id, grocery)
+    rescue ActiveRecord::RecordNotFound
+      no_record_found
+    end
   end
 
   def destroy
     grocery_id = params[:id]
-    @grocery = Grocery.destroy(grocery_id)
+    
+    begin
+      @grocery = Grocery.destroy(grocery_id)
+    rescue ActiveRecord::RecordNotFound
+      no_record_found
+    end
   end
 
   private
@@ -32,6 +41,6 @@ class GroceriesController < ApplicationController
     def no_record_found
       no_record = Hash.new
       no_record[:error] = "Record Not Found"
-      render json: no_record
+      render json: no_record, :status => :not_found
     end
 end

@@ -17,7 +17,11 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
     when('/profile', {
       templateUrl: "<%= asset_path('auth/profile.html') %>",
       controller: 'ProfileCtrl'
-    })
+    }).
+    when('/grocery_lists/create', {
+      templateUrl: "<%= asset_path('grocery_lists/create.html') %>",
+      controller: 'GroceryListCreateCtrl'
+    });
 
   $authProvider.configure({
     apiUrl: "<%= ENV['URL'] %>/api/v1" || 'https://localhost:3000/api/v1',
