@@ -32,13 +32,14 @@
 
           <div class="form-group">
             <label>District: </label> 
-            <select ng-model="updateAccountForm.district_id">
+            <select class="form-control" id="districts" ng-model="updateAccountForm.district_id">
               <option value="">{{ user_district }}</option>
               <option ng-repeat="district in districts" value="{{ district.id }}" >{{district.name}}</option>
             </select> 
           </div>
 
-        <button type="submit">Update your profile</button>
+        <button type="submit" class="btn btn-success">Update your profile</button>
+        <button type="button" ng-click="showEditFields=false"class="btn btn-danger">Cancel</button>
       </fieldset>
     </form>
   </div>

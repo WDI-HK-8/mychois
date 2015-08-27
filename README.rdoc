@@ -8,5 +8,8 @@ Group project by Terrence Lun and Rachel Lam created during the General Assembly
 
 # Installation instructions
 
-Fork and clone the repo.
-
+$ Fork and clone the repo.
+$ Run bundle install
+$ Run bower install
+$ Run ```rails c``` in terminal
+$ Go to localhost:3000/ with the browser
