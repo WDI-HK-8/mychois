@@ -50,6 +50,12 @@ class GroceryListsController < ApplicationController
     @grocery_lists = GroceryList.where(:worker_id => nil)
   end
 
+  def add_worker_to_list
+    grocery_list_id = params[:id]
+    grocery = GroceryList.update(grocery_list_id, :worker_id => current_user.id)
+    render json: {message: "Your ID has been added to the list!"}
+  end
+
   private
     def grocery_list_params
       params.require(:grocery_list).permit(:additional_comments, :substitutions, :name)
