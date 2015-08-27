@@ -37,7 +37,11 @@ app.config(['$routeProvider', '$authProvider', function($routeProvider, $authPro
     when('/buyers/index', {
       templateUrl: "<%= asset_path('buyer/index.html') %>",
       controller: 'BuyerIndexCtrl'
-    })
+    }).
+    when('/buyers/show/:id', {
+      templateUrl: "<%= asset_path('buyer/show.html') %>",
+      controller: 'BuyerShowCtrl'
+    });
 
   $authProvider.configure({
     apiUrl: "<%= ENV['URL'] %>/api/v1" || 'https://localhost:3000/api/v1',

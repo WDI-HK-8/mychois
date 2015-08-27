@@ -7,7 +7,7 @@ app.controller('LoginCtrl', ['$scope', '$http', '$auth', '$location', function($
     then(function(response){
       console.log(response);
       
-      $location.path('/');
+      $location.path('/grocery_lists/');
       $scope.loggedIn = true;
     }).
     catch(function(response){

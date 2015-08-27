@@ -16,4 +16,7 @@ Rails.application.routes.draw do
       resources 'grocery_list_items'
   end
   get '/api/v1/buyers/index' => 'grocery_lists#buyer_index'
+
+  put 'api/v1/grocery_lists/:id/add_worker' => 'grocery_lists#add_worker_to_list'
+  patch 'api/v1/grocery_lists/:id/add_worker' => 'grocery_lists#add_worker_to_list'
 end

@@ -4,5 +4,9 @@ app.controller('BuyerIndexCtrl', ['$scope', '$http', '$auth', '$location', funct
   $http.get(url + '/api/v1/buyers/index').then(function(response){
     $scope.grocery_list_buyer.list = response.data
     console.log(response.data)
-  })
+  });
+
+  $scope.showOneBuyerList = function(groceryList) {
+    $location.path('/buyers/show/' + groceryList.id)
+  }
 }]);

@@ -6,6 +6,7 @@ app.controller('BuyerApplyCtrl', ['$scope', '$http', '$auth', '$location', funct
     if ($scope.createList.workerAccept) {
       $http.put(url + '/api/v1/users/change_to_worker').then(function(response){
         console.log(response);
+        $location.path('/buyers/index');
       });
     }
   }
