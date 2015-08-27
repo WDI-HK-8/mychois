@@ -15,5 +15,5 @@ Rails.application.routes.draw do
   resources 'grocery_lists', :path => 'api/v1/grocery_lists' do
       resources 'grocery_list_items'
   end
-
+  get '/api/v1/buyers/index' => 'grocery_lists#buyer_index'
 end

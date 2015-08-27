@@ -7,7 +7,7 @@ class GroceryListsController < ApplicationController
   end
 
   def update
-    @grocery_list = GroceryList.find_by_id(params[:id])
+    @grocery_list.customer == current_user
 
     if @grocery_list.nil?
       render json: { message: "Cannot find the grocery list" }, status: :not_found
@@ -36,7 +36,7 @@ class GroceryListsController < ApplicationController
   def destroy
     @grocery_list = GroceryList.find_by_id(params[:id])
     if @grocery_list.nil? 
-      render json: {error: "No record found"}, :status => :bad_request
+      render json: {error: "No record found"}, :status => :not_found
     else
       if current_user.id == @grocery_list.customer_id
         @grocery_list.destroy
@@ -45,6 +45,11 @@ class GroceryListsController < ApplicationController
       end
     end
   end
+
+  def buyer_index
+    @grocery_lists = GroceryList.where(:worker_id => nil)
+  end
+
   private
     def grocery_list_params
       params.require(:grocery_list).permit(:additional_comments, :substitutions, :name)
