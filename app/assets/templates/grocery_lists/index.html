@@ -1,15 +1,17 @@
 <navbar></navbar>
 <div class="container-fluid" id="paper">
   <div class="row">
-    <div class="row">
-      <div class="col-xs-11">
-        <h1>Your Grocery List</h1>
-        <ul deleteGroceryList>
-          <li ng-repeat="groceryList in grocery_lists track by $index" ng-hide="groceryList.hide" ng-init="groceryList.hide=false">
-            <a href="" ng-click="showOneList(groceryList)">{{groceryList.name}}</a><button class="btn btn-danger" ng-click="delete(groceryList)">Delete</button>
-          </li>
-        </ul>
-      </div>
+    <h1>Create a List</h1>
+      <a ng-href="/#/grocery_lists/create" class="btn btn-success">Create</a>
+  </div>
+  <div class="row">
+    <div class="col-xs-11">
+      <h1>Your Grocery List</h1>
+      <ul deleteGroceryList>
+        <li ng-repeat="groceryList in grocery_lists track by $index" ng-hide="groceryList.hide" ng-init="groceryList.hide=false">
+          <a href="" ng-click="showOneList(groceryList)">{{groceryList.name}}</a><button class="btn btn-danger" ng-click="delete(groceryList)">Delete</button>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
