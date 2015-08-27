@@ -26,8 +26,8 @@ class GroceryListItemsController < ApplicationController
   def show
     grocery_list_item_id = params[:id]
     grocery_list_id = params[:grocery_list_id]
-    @grocery_list_item = GroceryListItem.where("id = #{grocery_list_item_id} AND grocery_list_id = #{grocery_list_id}")
-    render json: @grocery_list_item
+    @grocery_list_item = GroceryListItem.find(grocery_list_item_id)
+    # render json: @grocery_list_item
   end
 
   private

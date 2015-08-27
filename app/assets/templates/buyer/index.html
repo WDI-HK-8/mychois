@@ -1,1 +1,15 @@
-<navbar></navbar>
+<navbar></navbar> 
+<div class="container-fluid" id="paper">
+  <div class="row">
+    <div class="row">
+      <ul deleteGroceryList>
+        <li ng-repeat="groceryList in grocery_list_buyer.list track by $index" ng-hide="groceryList.hide" ng-init="groceryList.hide=false">
+          <a href="" ng-click="showOneList(groceryList)">
+            <h3>{{groceryList.name}} - {{groceryList.customer_name}}</h3>
+            <p>{{groceryList.customer_address}} - {{groceryList.customer_district}}</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

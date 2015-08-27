@@ -1,3 +1,8 @@
 app.controller('BuyerIndexCtrl', ['$scope', '$http', '$auth', '$location', function($scope, $http, $auth, $location){
-  console.log($scope.user)
+  var url = "<%= ENV['URL'] %>" || "http://localhost:3000"
+  $scope.grocery_list_buyer = []
+  $http.get(url + '/api/v1/buyers/index').then(function(response){
+    $scope.grocery_list_buyer.list = response.data
+    console.log(response.data)
+  })
 }]);
