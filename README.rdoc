@@ -1,28 +1,12 @@
-== README
+== mychois README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Description
 
-Things you may want to cover:
+mychois is a personal grocery shopper app that acts as a platform for individual consumers to order their groceries online and have them delivered to their home or office.
 
-* Ruby version
+Group project by Terrence Lun and Rachel Lam created during the General Assembly's Web Development Immersive Program in Hong Kong.
 
-* System dependencies
+# Installation instructions
 
-* Configuration
+Fork and clone the repo.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

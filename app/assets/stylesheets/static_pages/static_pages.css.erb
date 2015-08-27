@@ -1,43 +1,51 @@
 .navbar-default {
-  background: url(<%= asset_path "test.jpg" %>) no-repeat;
+  background: url(<%= asset_path "nav_bar.jpg" %>) no-repeat ;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  margin: 0px;
+  border: 0px;
 }
 
-.navbar-default {
-    padding-bottom:0;
-    height: 120px;
-    min-height: 120px;
-}
-
-.navbar-right {
-  padding: 20px;
-}
-
-body {
-  background-image: url(<%= asset_path "wood_background.jpg" %>);
-  background-position: center;
-  background-repeat: repeat-y;
-  background-size: cover;
-}
-
-.container {
-  background: url(<%= asset_path "background.jpg" %>) no-repeat center center fixed;
+.container, #paper {
+  background: url(<%= asset_path "wood_background.jpg" %>);
   background-repeat: repeat-y;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   padding: 0px 40px 40px 40px;
+  height: 900px;
 }
 
 #auto-complete-id {
   padding-left: 0;
 }
 
+*, .district-selection {
+  font-family: 'Architects Daughter', cursive;
+}
 
+label, li, .btn {
+  font-size: 20px;
+}
 
+ul {
+  list-style-type: none;
+}
+.form-control {
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: rgba(0,0,0,0);
+  border-bottom: 2px solid #5d6e5e;
+  font-size: 18px;
+  padding-bottom: 0px;
+  margin-bottom: 0px; 
+}
 
-
+input {
+  width: 70%;
+}

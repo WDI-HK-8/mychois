@@ -30,6 +30,7 @@ app.controller('GroceryListCreateCtrl', ['$scope', '$http', '$auth', '$location'
           console.log(response);
         });      
       })
+      $location.path('/grocery_lists/');
     }).
     catch(function(response){
       console.log(response);
