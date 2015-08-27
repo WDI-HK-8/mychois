@@ -1,16 +1,22 @@
 <navbar></navbar>
-<div class="container">
-  <h3>Apply to be a worker here!  You will be helping people grocery shop for them relieving them of the stress of having to do it themselves! By applying to be a worker for mychois you must be polite and quick on the job!</h3>
+<div class="container-fluid" id="paper">
+  <div class="row">
+    <h1>Application to be a Shopper</h1>
+    
+    <h3>At the grocery store already? Help pick up groceries for others and earn some money. Apply to be a worker - You will be helping people grocery shop for them relieving them of the stress of having to do it themselves!</h3>
 
-<form ng-submit="createList.create()">
-<div class="checkbox">
-  <label>
-    <input ng-model="createList.workerAccept" type="checkbox"> I agree to these terms and services
-  </label>
-</div>
+    <p>By applying to be a worker for mychois you must be polite and quick on the job. Click apply below and we will contact you to review your details. We look forward to you joining to team!<br /> <br />
 
-<button class= "btn btn-success">Apply</button>
-</form>
+    Applicants agree to a criminal records check as well as two professional reference checks. If the applicant's profile should be approve, please note that we may withdraw such employment should the mychois delivery standards be violated.</p>
 
+    <form ng-submit="createList.create()">
+    <div class="checkbox">
+      <label>
+        <input ng-model="createList.workerAccept" type="checkbox"> I agree to these terms and services
+      </label>
+    </div>
 
+    <button class= "btn btn-success">Apply</button>
+    </form>
+  </div>
 </div>

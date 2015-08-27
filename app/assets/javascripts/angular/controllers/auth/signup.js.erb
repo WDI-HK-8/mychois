@@ -15,8 +15,7 @@ app.controller('SignUpCtrl', ['$scope', '$http', '$auth', '$location', function(
     $auth.submitRegistration($scope.registrationForm).
     then(function(response){
       console.log(response);
-      
-      $location.path('/');
+      $location.path('/grocery_lists/');
     }).
     catch(function(response){
       console.log(response);
