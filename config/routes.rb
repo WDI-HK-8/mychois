@@ -7,8 +7,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
-  put 'api/v1/users/:id/change_user_types' => 'users#change_user_types'
-  patch 'api/v1/users/:id/change_user_types' => 'users#change_user_types'
+  put 'api/v1/users/change_to_worker' => 'users#change_to_buyer'
+  patch 'api/v1/users/change_to_worker' => 'users#change_to_buyer'
   get 'api/v1/districts' => 'districts#index'
   get 'api/v1/user_types' => 'user_types#index'
   resources 'groceries', :path => 'api/v1/groceries'

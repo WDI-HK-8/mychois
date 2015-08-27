@@ -1,0 +1,14 @@
+app.controller('BuyerApplyCtrl', ['$scope', '$http', '$auth', '$location', function($scope, $http, $auth, $location){
+  var url = "<%= ENV['URL'] %>" || "http://localhost:3000"
+  
+  $scope.createList = {}
+  $scope.createList.create = function() {
+    if ($scope.createList.workerAccept) {
+      $http.put(url + '/api/v1/users/change_to_worker').then(function(response){
+        console.log(response);
+      });
+    }
+  }
+
+
+}]);
