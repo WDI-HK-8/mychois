@@ -13,6 +13,7 @@
 //= require jquery/dist/jquery
 //= require bootstrap/dist/js/bootstrap
 //= require angular/angular
+//= require allmighty-autocomplete/script/autocomplete
 //= require angular-route/angular-route
 //= require angular-cookie/angular-cookie
 //= require ng-token-auth/dist/ng-token-auth

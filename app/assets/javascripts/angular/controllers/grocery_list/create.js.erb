@@ -1,16 +1,47 @@
 app.controller('GroceryListCreateCtrl', ['$scope', '$http', '$auth', '$location', function($scope, $http, $auth, $location){
   $scope.createList = {}
+  $scope.createList.grocery_list_items = [{quantity: 0, grocery_name: ''}]
+
   var url = "<%= ENV['URL'] %>" || "http://localhost:3000"
 
+  $http.get(url+'/api/v1/groceries').then(
+    function(response) {
+      $scope.groceries = response.data
+      $scope.autoCompleteData = [];
+      response.data.forEach(function(element) {
+        $scope.autoCompleteData.push(element.name);
+      });
+
+    })
+
   $scope.createList.create = function() {
-    console.log($scope.createList);
+    // Process Array
+    $scope.createList.grocery_list_items.forEach(function(element, index) {
+      if (element.quantity <= 0 || element.grocery_name == "") {
+        delete $scope.createList.grocery_list_items[index];
+      }
+    });
     $http.post(url + '/api/v1/grocery_lists', $scope.createList).
     then(function(response){
-      console.log(response);
+      grocery_list_id = response.data.id
+      $scope.createList.grocery_list_items.forEach(function(element) {
+        $http.post(url + '/api/v1/grocery_lists/' + grocery_list_id + '/grocery_list_items', {grocery_list_item: element }).
+        then(function(response){
+          console.log(response);
+        });      
+      })
     }).
     catch(function(response){
       console.log(response);
     });
-  }
+  };
   
+  $scope.addItem = function(){
+    console.log($scope.createList.grocery_list_items)
+    $scope.createList.grocery_list_items.push(
+      {quantity: 0,
+       grocery_name: ''}
+    );
+  };
+
 }]);

@@ -18,8 +18,25 @@
               <input ng-model="createList.grocery_list.substitutions" type="checkbox"> Allow Worker to substitute when out of stock
             </label>
           </div>
-          <button type="submit" class="btn btn-success">Submit</button>
-          <a href="/#/" class="btn btn-danger">Back</a>
+          <div class="form-group col-xs-3">
+            <label>Quantity</label>
+          </div>
+          <div class="form-group col-xs-9">
+            <label>Grocery Item</label>
+          </div>
+          <section ng-repeat="item in createList.grocery_list_items track by $index" class="grocery_list_items">
+            <div class="form-group col-xs-3">
+              <input type="number" name="name" ng-model="item.quantity" ng-blur="addItem()" class="form-control">
+            </div>
+            <div class="form-group col-xs-8">
+              <autocomplete data="autoCompleteData" ng-model="item.grocery_name" autocomplete-required></autocomplete>
+            </div>
+            <button class="col-xs-1 btn btn-default">Remove</button>
+          </section>
+          <div class="form-buttons col-xs-12">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <a ng-href="/#/" class="btn btn-danger">Back</a>
+          </div>
         </form>
       </div>
     </div>
