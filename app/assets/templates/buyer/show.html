@@ -1,0 +1,19 @@
+<navbar></navbar>
+<div class="container-fluid" id="paper">
+  <div class="row">
+    <h1>Grocery List # {{ grocery_list.id }}</h1>
+    <ul>
+      <li>Name: {{ grocery_list.name }} </li>
+      <li>Additional Comments: {{ grocery_list.additional_comments }}</li>
+      <li>Allow for substitutions: {{ grocery_list.substitutions }}</li>
+      <li><h3>Grocery List:</h3>
+        <ul ng-repeat="groceries in grocery_list_items_display track by $index">
+          <li>{{groceries.quantity}} x {{groceries.name}} at  {{groceries.current_price}} = {{groceries.total_price}}</li>
+      </ul>
+      <li>Total: ${{grocery_list.total}}</li>
+    </ul>
+    </li>
+    <button type="button" class="btn btn-primary" ng-click="takeOrder()">Take Order!</button>
+    <a href="/#/" class="btn btn-danger">Back</a>
+  </div>
+</div>
