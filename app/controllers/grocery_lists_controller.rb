@@ -45,6 +45,11 @@ class GroceryListsController < ApplicationController
       end
     end
   end
+
+  def buyer_index
+    @grocery_lists = GroceryList.where(:worker_id => nil)
+  end
+
   private
     def grocery_list_params
       params.require(:grocery_list).permit(:additional_comments, :substitutions, :name)

@@ -6,6 +6,10 @@
       <li>Name: {{ grocery_list.name }} </li>
       <li>Additional Comments: {{ grocery_list.additional_comments }}</li>
       <li>Allow for substitutions: {{ grocery_list.substitutions }}</li>
+      <ul>
+        <li>5 x Apples</li>
+      </ul>
+      <li>Total: ${{grocery_list.total}}</li>
     </ul>
     <button type="button" class="btn btn-primary" ng-click="showEditFields=true">Update</button>
     <a href="/#/" class="btn btn-danger">Back</a>
