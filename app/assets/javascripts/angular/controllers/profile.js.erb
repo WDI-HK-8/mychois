@@ -1,10 +1,11 @@
 app.controller('ProfileCtrl', ['$scope', '$auth', '$http', '$location', function($scope, $auth, $http, $location){
-  
+  var url = "<%= ENV['URL'] %>" || "http://localhost:3000"
+
   if ($scope.user == null){
     $location.path('/');
   };
 
-  $http.get('/api/v1/districts').
+  $http.get(url + '/api/v1/districts').
   then(function(response){
     $scope.districts = response.data;
     console.log($scope.districts);
@@ -16,6 +17,7 @@ app.controller('ProfileCtrl', ['$scope', '$auth', '$http', '$location', function
     $scope.user_district = $scope.districts[$scope.user.district_id-1].name;
     console.log('updated');
   })
+  
   $scope.handleUpdateAccountBtnClick = function() {
     $auth.updateAccount($scope.updateAccountForm)
       .then(function(response) {

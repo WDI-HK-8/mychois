@@ -1,0 +1,41 @@
+<navbar></navbar>
+<div class="container">
+  <div class="row">
+    <h1>Grocery List # {{ grocery_list.id }}</h1>
+    <ul>
+      <li>Name: {{ grocery_list.name }} </li>
+      <li>Additional Comments: {{ grocery_list.additional_comments }}</li>
+      <li>Allow for substitutions: {{ grocery_list.substitutions }}</li>
+    </ul>
+    <button type="button" class="btn btn-primary" ng-click="showEditFields=true">Update</button>
+    <a href="/#/" class="btn btn-danger">Back</a>
+    <a href="" class="btn btn-danger" ng-click="delete()">Delete</a>
+  </div>
+  <div class="row" ng-disabled="!loggedIn" ng-show="showEditFields">
+      <div class="col-xs-11">
+        <h1>Update Your Grocery List</h1>
+        <form ng-submit="updateList.update()">
+          <div class="form-group">
+            <label>Grocery List #</label>
+            {{ grocery_list.id }}
+          </div>
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" ng-model="updateList.grocery_list.name" placeholder="{{grocery_list.name}}" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Additional Comments</label>
+            <textarea name="additional_comments" ng-model="updateList.grocery_list.additional_comments" placeholder={{grocery_list.additional_comments}} class="form-control">
+            </textarea>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input ng-model="updateList.grocery_list.substitutions" type="checkbox"> Yes, please substitute anything out of stock
+            </label>
+          </div>
+          <button type="submit" ng-click="showEditFields=false"class="btn btn-success">Submit</button>
+          <button type="button" ng-click="showEditFields=false"class="btn btn-danger">Cancel</button>
+        </form>
+      </div>
+  </div>
+</div>
